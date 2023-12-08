@@ -1,12 +1,9 @@
 name: "CodeQL"
 
 on:
-     workflow_run:
-         workflows: ["Create automatic Pull Request"]
-         types:
-           - completed
+
      push:
-       branches: [ "feature" ]
+       branches: [ "dev" ]
   
 
 jobs:
