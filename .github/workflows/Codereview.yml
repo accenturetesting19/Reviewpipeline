@@ -1,7 +1,8 @@
 name: "CodeQL"
 
 on:
-    pull-request:
+    pull_request:
+       branches: 
         - dev
      push:
        branches: 
