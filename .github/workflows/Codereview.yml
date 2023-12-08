@@ -1,0 +1,65 @@
+name: "CodeQL"
+
+on:
+     workflow_run:
+         workflows: ["Create automatic Pull Request"]
+         types:
+           - completed
+     push:
+       branches: [ "feature" ]
+  
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    name: Analyze
+    
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript-typescript']
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
+
+    - run: |
+         echo "Run, Build Application using script"
+        # ./dist/buildscript.sh
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        category: "/language:${{matrix.language}}"
+
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    name: Sonarcloud
+    steps:
+      - name: Analyze with SonarCloud
+
+        uses: SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
+        with:
+          # Additional arguments for the sonarcloud scanner
+          args:
+            # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
+            # mandatory
+            -Dsonar.projectKey=accenturetesting19_Reviewpipeline
+            -Dsonar.organization=sonarscankey

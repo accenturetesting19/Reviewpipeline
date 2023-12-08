@@ -3,8 +3,8 @@ name: demo to create PR
 on:
   push:
     branches:
-      - develop
-      - feature
+      - dev
+      
     
 jobs:
   AutomaticPR:
@@ -23,8 +23,8 @@ jobs:
         id: test-1
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: "Autoprcreate"
-          base: main
+          branch: "feature"
+          #base: main
           title: "Automatic Pull request creation"
           committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}">
           author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}">
