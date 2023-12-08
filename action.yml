@@ -1,0 +1,7 @@
+name: 'Trying greeting'
+author: 'Sapna'
+description: 'Custom GH action with TypeScript'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
