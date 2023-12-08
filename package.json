@@ -1,0 +1,24 @@
+{
+  "name": "reviewpipeline",
+  "version": "0.0.0",
+  "description": "Reviewpipelinedemo",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/accenturetesting19/Reviewpipeline.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/accenturetesting19/Reviewpipeline/issues"
+  },
+  "homepage": "https://github.com/accenturetesting19/Reviewpipeline#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  }
+}
