@@ -3,17 +3,17 @@ name: "CodeQL"
 on:
     pull_request:
        branches: 
-        - dev
+        - develop
     push:
        branches: 
-        - dev
-        - featuretest
+        - develop
         - main
   
 
 jobs:
+  Analysis:
     runs-on: ubuntu-latest
-    name: Sonarcloud
+     
     steps:
       - name: Analyze with SonarCloud
 

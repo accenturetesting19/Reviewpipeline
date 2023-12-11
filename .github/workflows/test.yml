@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-      - dev
+      - develop
 
 jobs:
   run-action:
