@@ -9,7 +9,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection(
 {
   host:'localhost',
-  user: "admin",
+  user: "admin1",
   database: "project",
   password: "mypassword", // sensitive
   multipleStatements: true
