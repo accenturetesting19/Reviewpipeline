@@ -1,7 +1,5 @@
 let message: string = 'Hello, World';
-console.log(message);
-let message: string = 'Hello, World';
-console.log(message);
+console.log(message;
 
 var mysql = require('mysql');
 new RegExp("([");
