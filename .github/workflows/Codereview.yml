@@ -22,15 +22,15 @@ jobs:
       - name: Analyze with SonarCloud
 
         uses: SonarSource/sonarcloud-github-action@main
-        with:
-          projectBaseDir: src
+       
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
         with:
-          # Additional arguments for the sonarcloud scanner
+          projectBaseDir: src
           args:
             # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
             # mandatory
             -Dsonar.projectKey=accenturetesting19_Reviewpipeline
             -Dsonar.organization=sonarscankey
+            -Dsonar.sources=src/
