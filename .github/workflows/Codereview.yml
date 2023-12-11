@@ -33,4 +33,4 @@ jobs:
             # mandatory
             -Dsonar.projectKey=accenturetesting19_Reviewpipeline
             -Dsonar.organization=sonarscankey
-            -Dsonar.sources=lib/
+            #-Dsonar.sources=lib/
