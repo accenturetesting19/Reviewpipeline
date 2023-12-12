@@ -24,6 +24,7 @@ jobs:
       #- id: automerge
       - name: automerge
         uses: "pascalgn/automerge-action@v0.15.6"
+        labels: automerge
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           delete-branch: true  
