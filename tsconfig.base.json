@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "allowUnreachableCode": false,
+      "allowUnusedLabels": false,
+      "declaration": true,
+      "declarationMap": true,
+      "esModuleInterop": true,
+      "module": "Node16" , 
+      "moduleResolution": "node16",
+      "module": "CommonJS" ,
+      "noImplicitReturns": true,
+      "pretty": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "strict": true,
+      "types": ["node", "jest", "express"],
+      "target": "ES2021",
+      "lib": ["ES2021"],
+      "paths": {}
+    },    
+    "include": ["src/**/*.ts" , "/*.ts" ,"src/**/*.js" , "/*.js" ],
+    "exclude": ["src/**/*.spec.ts"]
+  }
