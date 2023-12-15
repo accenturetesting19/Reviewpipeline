@@ -1,11 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from '/App'; 
+var express = require('express');
+var app = express();
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+app.get('/', function (req, res) {
+    res.send('{ "response": "Hello From Thetips4you" }');
+});
+
+app.get('/will', function (req, res) {
+    res.send('{ "response": "Hello World" }');
+});
+app.get('/ready', function (req, res) {
+    res.send('{ "response": " Great!, It works!" }');
+});
+app.listen(process.env.PORT || 3000);
+module.exports = app;
