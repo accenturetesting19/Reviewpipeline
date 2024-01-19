@@ -8,6 +8,7 @@ on:
     branches:
       - main
       - develop
+      - feature-patch1
 
 jobs:
   run-action:
@@ -31,6 +32,9 @@ jobs:
         run: npm run build
       - name: Test and coverage
         run: npm run test
-      - name: Run my action
-        run: npm start
+      - name: Run my coverage
+        uses: kcjpop/coverage-comments@v2.2
+        with:
+         github-token: ${{ secrets.GITHUB_TOKEN }}
+         coverage-file: './coverage/clover.xml'
        
