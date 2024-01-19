@@ -3,10 +3,12 @@ on:
   push:
     branches:
       - develop
+      - feature-patch1
       - main
   pull_request:
     branches:
       - main
+      - feature-patch1
       - develop
 
 jobs:
@@ -32,5 +34,7 @@ jobs:
       - name: Test and coverage
         run: npm run test
       - name: Run my action
-        run: npm start
+        uses: romeovs/lcov-reporter-action@v0.2.16
+        with:
+         lcov-file: ./coverage/lcov.info
        
