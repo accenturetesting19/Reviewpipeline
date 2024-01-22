@@ -14,5 +14,6 @@
         "path": "./tsconfig.build.json"
       }
     ],
+    "include": ["src", "index.js"],
     "exclude": ["node_modules"]
   }
