@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testapp-deployment
+  labels:
+    app: testappdeploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testappdeploy
+  template:
+    metadata:
+      labels:
+        app: testappdeploy 
+    spec:
+      containers:
+      - name: nodeserver
+        image: sapnamanokar/testappdeploy:feature-patch1
+        ports:
+        - containerPort: 3000

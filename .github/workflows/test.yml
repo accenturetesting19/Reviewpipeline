@@ -8,6 +8,7 @@ on:
     branches:
       - main
       - develop
+      - feature-patch2
 
 jobs:
   run-action:
@@ -31,6 +32,13 @@ jobs:
         run: npm run build
       - name: Test and coverage
         run: npm run test
-      - name: Run my action
-        uses: ./
+      - name: Run my coverage
+        uses: kcjpop/coverage-comments@v2.2
+        with:
+         github-token: ${{ secrets.GITHUB_TOKEN }}
+         coverage-file: './coverage/clover.xml'
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
        

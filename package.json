@@ -4,6 +4,7 @@
   "description": "Reviewpipelinedemo",
   "main": "dist/index.js",
   "scripts": {
+    "start": "node index.js",
     "build": "tsc -p tsconfig.build.json",
     "lint": "eslint src",
     "test": "jest"
@@ -39,6 +40,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "node": "^21.2.0"
   }
 }
